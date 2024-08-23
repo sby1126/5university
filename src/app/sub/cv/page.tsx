@@ -12,8 +12,23 @@ export default function ArtsPage() {
     >
       <div className="p-20">
         <div className="gap-5 flex flex-col">
-          <p className="font-semibold text-white text-[2rem]">My Show</p>
-          <p className="text-white text-[1.5rem]">
+          <p className="font-semibold text-white text-[1.5rem]">My Show</p>
+          <p className="text-white text-[1rem]">
+            2024 The Floor, The Wall, The Space In-Between, Regards, Chicago,IL
+          </p>
+          <p className="text-white text-[1rem]">
+            2024 The Floor, The Wall, The Space In-Between, Regards, Chicago,IL
+          </p>
+          <p className="text-white text-[1rem]">
+            2024 The Floor, The Wall, The Space In-Between, Regards, Chicago,IL
+          </p>
+          <p className="text-white text-[1rem]">
+            2024 The Floor, The Wall, The Space In-Between, Regards, Chicago,IL
+          </p>
+          <p className="text-white text-[1rem]">
+            2024 The Floor, The Wall, The Space In-Between, Regards, Chicago,IL
+          </p>
+          <p className="text-white text-[1rem]">
             2024 The Floor, The Wall, The Space In-Between, Regards, Chicago,IL
           </p>
         </div>

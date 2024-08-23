@@ -7,9 +7,9 @@ import "../globals.css";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1.5 }}
-      exit={{ opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 0.75 }}
       className="flex flex-col h-screen"
     >
       <header className="sticky top-0 flex justify-between items-center border-b-2 border-white p-3">

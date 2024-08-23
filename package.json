@@ -2,17 +2,21 @@
   "name": "daehak-oh",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sby1126.github.io/5university/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "framer-motion": "^11.3.29",
+    "gh-pages": "^6.1.1",
     "next": "14.2.6",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -23,5 +27,9 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
