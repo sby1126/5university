@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function ArtsPage() {
+export default function ImageGridAuto() {
   const imageList = [
     "/images/IMG_9531.JPG",
     "/images/IMG_9532.JPG",

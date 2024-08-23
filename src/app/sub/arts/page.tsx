@@ -1,43 +1,36 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function ArtsPage() {
-  const imageList = [
-    "/images/IMG_9531.JPG",
-    "/images/IMG_9532.JPG",
-    "/images/IMG_9533.JPG",
-    "/images/IMG_9534.JPG",
-    "/images/IMG_9535.JPG",
-    "/images/IMG_9536.JPG",
-    "/images/IMG_9537.JPG",
-  ];
-
+  const categoryList = ["Sculpture", "Paper Work", "Painting"];
+  const [hoverText, setHoverText] = useState<string>("");
   return (
     <motion.div
+      className="w-full h-full flex justify-center items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="p-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {imageList.map((i, idx) => {
-            return (
-              <motion.div
-                className="w-80 h-50 sm:w-full overflow-hidden"
-                key={idx}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <motion.img
-                  className="object-cover w-full h-full"
-                  layoutId={`index_${idx}`}
-                  src={i}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 items-center">
+        {categoryList.map((i, idx) => {
+          return (
+            <Link href={`/sub/arts/${i.replace(" ", "")}`} key={idx}>
+              <motion.div className="relative w-80 h-80 overflow-hidden flex justify-center items-center">
+                <Image
+                  className="object-cover w-full h-full opacity-55"
+                  src={`/images/${i}.jpeg`}
+                  alt=""
                 />
+                <span className="absolute text-[1.5rem] text-white cursor-pointer">
+                  {i}
+                </span>
               </motion.div>
-            );
-          })}
-        </div>
+            </Link>
+          );
+        })}
       </div>
     </motion.div>
   );
