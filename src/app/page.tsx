@@ -9,7 +9,7 @@ export default function Home() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7 }}
     >
-      <main className="w-full h-screen bg-[url('/images/IMG_9538.JPG')] bg-cover flex justify-center items-center">
+      <main className="w-full h-screen bg-[url('/5university/images/IMG_9538.JPG')] bg-cover flex justify-center items-center">
         <Link href="/sub" className="text-[2rem] md:text-[5rem] tracking-wide text-white">
           5university
         </Link>

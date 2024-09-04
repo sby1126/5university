@@ -14,7 +14,7 @@ export default function ImageCategory() {
                         >
                             <Image
                                 className="object-cover w-full h-full opacity-55"
-                                src={`/images/${i}.jpeg`}
+                                src={`/5university/images/${i}.jpeg`}
                                 alt=""
                             />
                             <motion.div className="absolute w-full h-full flex justify-center items-center" whileHover={{ scale: 1.2 }}>

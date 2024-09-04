@@ -5,16 +5,16 @@ import { useState } from "react";
 
 export default function ImageGridAuto() {
   const imageList = [
-    "/images/IMG_9531.JPG",
-    "/images/IMG_9532.JPG",
-    "/images/IMG_9533.JPG",
-    "/images/IMG_9534.JPG",
-    "/images/IMG_9535.JPG",
-    "/images/IMG_9536.JPG",
-    "/images/IMG_9537.JPG",
-    "/images/IMG_9538.JPG",
-    "/images/IMG_9539.JPG",
-    "/images/IMG_9540.JPG",
+    "/5university/images/IMG_9531.JPG",
+    "/5university/images/IMG_9532.JPG",
+    "/5university/images/IMG_9533.JPG",
+    "/5university/images/IMG_9534.JPG",
+    "/5university/images/IMG_9535.JPG",
+    "/5university/images/IMG_9536.JPG",
+    "/5university/images/IMG_9537.JPG",
+    "/5university/images/IMG_9538.JPG",
+    "/5university/images/IMG_9539.JPG",
+    "/5university/images/IMG_9540.JPG",
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
