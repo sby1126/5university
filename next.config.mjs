@@ -5,6 +5,9 @@ const nextConfig = {
     assetPrefix:
         "https://sby1126.github.io/5university/"
     ,
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default nextConfig;
