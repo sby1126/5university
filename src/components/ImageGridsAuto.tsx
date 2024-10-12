@@ -5,16 +5,16 @@ import { useState } from "react";
 
 export default function ImageGridAuto() {
   const imageList = [
-    "/5university/images/IMG_9531.JPG",
-    "/5university/images/IMG_9532.JPG",
-    "/5university/images/IMG_9533.JPG",
-    "/5university/images/IMG_9534.JPG",
-    "/5university/images/IMG_9535.JPG",
-    "/5university/images/IMG_9536.JPG",
-    "/5university/images/IMG_9537.JPG",
-    "/5university/images/IMG_9538.JPG",
-    "/5university/images/IMG_9539.JPG",
-    "/5university/images/IMG_9540.JPG",
+    {path:"/images/IMG_9531.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9532.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9533.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9534.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9535.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9536.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9537.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9538.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9539.JPG", desc:"Image Description"},
+    {path:"/images/IMG_9540.JPG", desc:"Image Description"},
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -39,8 +39,8 @@ export default function ImageGridAuto() {
                 <motion.img
                   className="object-cover w-full h-full"
                   layoutId={`index_${idx}`}
-                  src={i}
-                  onClick={() => openImages(i)}
+                  src={i.path}
+                  onClick={() => openImages(i.path)}
                 />
               </motion.div>
             );
@@ -52,12 +52,29 @@ export default function ImageGridAuto() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <Image
-                src={`${selectedImage}`}
-                alt=""
-                className="object-none w-auto h-auto"
-                onClick={() => setSelectedImage(null)}
-              />
+              <div className="w-full h-4/5 justify-center text-center hidden lg:flex">
+                <Image
+                  src={`${selectedImage}`}
+                  alt=""
+                  className="object-scale-down w-auto h-auto"
+                  onClick={() => setSelectedImage(null)}
+                />
+                <span className="text-white text-lg ml-10">
+                  {imageList.filter((i) => i.path == selectedImage).map((i) => i.desc)}
+                </span>
+              </div>
+
+              <div className="w-full h-full relative text-center p-5 lg:hidden ">
+                <Image
+                  src={`${selectedImage}`}
+                  alt=""
+                  className="object-scale-down w-auto h-auto"
+                  onClick={() => setSelectedImage(null)}
+                />
+                <span className="text-white text-lg mt-10">
+                  {imageList.filter((i) => i.path == selectedImage).map((i) => i.desc)}
+                </span>
+              </div>
             </motion.div>
           ) : null}
         </motion.div>
