@@ -1,26 +1,51 @@
 "use client";
+import { supabase } from "@/utils/supabase/client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function ImageGridAuto() {
-  const imageList = [
-    {path:"/images/IMG_9531.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9532.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9533.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9534.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9535.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9536.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9537.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9538.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9539.JPG", desc:"Image Description"},
-    {path:"/images/IMG_9540.JPG", desc:"Image Description"},
-  ];
+interface ArtData {
+  id: number;
+  create_at: Date;
+  title: string;
+  content: string;
+  path: string;
+  category: string;
+}
 
+type ArtProps = {
+  imageList: ArtData[];
+};
+
+type SlugProps = {
+  slug: string;
+};
+export default function ImageGridAuto({ slug }: SlugProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [imageList, setImageList] = useState<ArtData[]>([]);
+  async function selectArtImage(): Promise<ArtData[] | null | undefined> {
+    try {
+      const { data: result } = await supabase
+        .from(process.env.NEXT_PUBLIC_SUPABASE_TABLE!)
+        .select()
+        .eq("category", slug);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const openImages = (id: string) => {
     setSelectedImage(id);
   };
+
+  useEffect(() => {
+    async function callImageList() {
+      const result = await selectArtImage();
+      setImageList(result!);
+    }
+    callImageList();
+  }, []);
 
   return (
     <motion.div
@@ -54,25 +79,34 @@ export default function ImageGridAuto() {
             >
               <div className="w-full h-4/5 justify-center text-center hidden lg:flex">
                 <Image
+                  loader={() => selectedImage}
                   src={`${selectedImage}`}
                   alt=""
                   className="object-scale-down w-auto h-auto"
                   onClick={() => setSelectedImage(null)}
                 />
                 <span className="text-white text-lg ml-10">
-                  {imageList.filter((i) => i.path == selectedImage).map((i) => i.desc)}
+                  {imageList
+                    .filter((i) => i.path == selectedImage)
+                    .map((i) => i.title)}
                 </span>
               </div>
 
               <div className="w-full h-full relative text-center p-5 lg:hidden ">
                 <Image
+                  loader={() => selectedImage}
                   src={`${selectedImage}`}
                   alt=""
-                  className="object-scale-down w-auto h-auto"
+                  fill={true}
+                  width={0}
+                  height={0}
+                  className="object-scale-down"
                   onClick={() => setSelectedImage(null)}
                 />
                 <span className="text-white text-lg mt-10">
-                  {imageList.filter((i) => i.path == selectedImage).map((i) => i.desc)}
+                  {imageList
+                    .filter((i) => i.path == selectedImage)
+                    .map((i) => i.title)}
                 </span>
               </div>
             </motion.div>

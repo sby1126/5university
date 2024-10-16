@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ChangeEventHandler, useState } from "react";
+import { useState } from "react";
 import { supabase } from "../../utils/supabase/client";
 
 interface ArtData {
@@ -27,13 +27,6 @@ export default function Upload() {
 
   const uploadImage = async () => {
     try {
-      const artData: ArtData = {
-        title: title,
-        content: content,
-        path: imageUplodFile!.name,
-        category: category,
-      };
-
       const { data: image, error: uploadError } = await supabase.storage
         .from("ART_STORAGE")
         .upload(`${imageUplodFile!.name}`, imageUplodFile!);
@@ -48,6 +41,12 @@ export default function Upload() {
 
       if (imgUrl) {
         setImageUrl(imgUrl.publicUrl);
+        let artData: ArtData = {
+          title: title,
+          content: content,
+          path: imgUrl.publicUrl,
+          category: category,
+        };
         const { error: PostgrestError } = await supabase
           .from("ART_LIST")
           .insert(artData);

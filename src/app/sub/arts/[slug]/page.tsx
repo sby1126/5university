@@ -1,4 +1,5 @@
 import ImageGridAuto from "@/components/ImageGridsAuto";
+import { supabase } from "@/utils/supabase/client";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -6,19 +7,35 @@ type Props = {
     slug: string;
   };
 };
+
+interface ArtData {
+  id: number;
+  create_at: Date;
+  title: string;
+  content: string;
+  path: string;
+  category: string;
+}
+interface ImageData {
+  path: string;
+  title: string;
+}
+
 export function generateMetadata({ params }: Props) {
+  console.log("generate > " + params.slug);
   return {
-    title: `제품의 이름: ${params.slug}`,
+    title: `${params.slug}`,
   };
 }
 
-export default function PantsPage({ params }: Props) {
+export default async function CategoryPage({ params }: Props) {
   if (params.slug === "nothing") {
     notFound();
   }
+
   return (
     <div>
-      <ImageGridAuto />
+      <ImageGridAuto slug={params.slug} />
     </div>
   );
 }

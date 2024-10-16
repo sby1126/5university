@@ -38,6 +38,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             className="flex cursor-pointer"
             whileHover={{ scale: 1.2 }}
           >
+            <Link href="/sub/statement" className="pr-7">
+              Statement
+            </Link>
+          </motion.div>
+          <motion.div
+            className="flex cursor-pointer"
+            whileHover={{ scale: 1.2 }}
+          >
             <Link href="/sub/cv" className="pr-7">
               CV
             </Link>
