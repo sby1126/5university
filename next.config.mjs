@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
-    basePath: '/5university',
-    assetPrefix:
-        "https://sby1126.github.io/5university/"
-    ,
+  images: {
+    domains: [
+      "https://mwzuvsuhvsggcpgwznlm.supabase.co/storage/v1/object/public/ART_STORAGE/",
+    ],
+  },
 };
 
 export default nextConfig;
