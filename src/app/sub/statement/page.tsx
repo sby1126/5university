@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Kanit } from "next/font/google";
 const kanit = Kanit({ weight: "300", subsets: ["latin"] });
-export default function CvPage() {
+export default function StatementPage() {
   return (
     <motion.div
       className={kanit.className}

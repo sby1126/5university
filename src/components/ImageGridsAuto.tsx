@@ -58,21 +58,27 @@ export default function ImageGridAuto({ slug }: SlugProps) {
           {imageList.map((i, idx) => {
             return (
               <motion.div
-                className="overflow-hidden mb-5 hover:opacity-65"
+                className="overflow-hidden mb-5 hover:opacity-65 relative h-[400px]"
                 key={idx}
               >
                 <motion.img
-                  className="object-cover w-full h-full"
+                  className="object-scale-down w-full h-full absolute object-center"
                   layoutId={`index_${idx}`}
                   src={i.path}
                   onClick={() => openImages(i.path)}
                 />
+                <div
+                  className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-2xl text-white font-semibold"
+                  onClick={() => openImages(i.path)}
+                >
+                  {i.title}
+                </div>
               </motion.div>
             );
           })}
           {selectedImage ? (
             <motion.div
-              className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none"
+              className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none z-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -92,14 +98,11 @@ export default function ImageGridAuto({ slug }: SlugProps) {
                 </span>
               </div>
 
-              <div className="w-full h-full relative text-center p-5 lg:hidden ">
+              <div className="w-full h-full text-center p-5 lg:hidden ">
                 <Image
                   loader={() => selectedImage}
                   src={`${selectedImage}`}
                   alt=""
-                  fill={true}
-                  width={0}
-                  height={0}
                   className="object-scale-down"
                   onClick={() => setSelectedImage(null)}
                 />
