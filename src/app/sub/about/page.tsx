@@ -19,7 +19,7 @@ export default function ArtsPage() {
           >
             <div className="p-4 md:p-12 text-center lg:text-left">
               {/* <!-- Image for mobile view--> */}
-              <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center bg-[url('/5university/images/5university_Profile.jpeg')]" />
+              <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center bg-[url('/images/5university_Profile.jpeg')]" />
 
               <h1 className="text-3xl font-bold pt-8 lg:pt-0">{`DAEHAK OH`}</h1>
               <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-black"></div>
@@ -103,7 +103,7 @@ export default function ArtsPage() {
           <div className="w-full lg:w-2/5">
             {/* <!-- Big profile image for side bar (desktop) --> */}
             <Image
-              src="/5university/images/5university_Profile.jpeg"
+              src="/images/5university_Profile.jpeg"
               className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
               alt=""
             />
