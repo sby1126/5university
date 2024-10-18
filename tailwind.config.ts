@@ -13,24 +13,16 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      keyframes: {
-        "fade-in": {
-          "0%": {
-            opacity: "0",
-          },
-          "100%": {
-            opacity: "1",
-          },
-        },
-        "fade-out": {
-          "0%": {
-            opacity: "1",
-          },
-          "100%": {
-            opacity: "0",
-          },
-        },
-      },
+      animation: {
+				fade: 'fadeIn .5s ease-in-out',
+			},
+
+			keyframes: {
+				fadeIn: {
+					from: { opacity: "0" },
+					to: { opacity: "1" },
+				},
+			},
     },
   },
   plugins: [],
