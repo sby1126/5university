@@ -41,7 +41,7 @@ export default async function CategoryPage({ params }: Props) {
 }
 
 export function generateStaticParams() {
-  const products = ["pants", "skirt"];
+  const products = ["Sculpture", "Painting", "PaperWork"];
   return products.map((product) => ({
     slug: product,
   }));
