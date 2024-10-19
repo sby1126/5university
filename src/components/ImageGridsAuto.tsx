@@ -53,7 +53,7 @@ export default function ImageGridAuto({ slug }: SlugProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="p-20">
+      <div>
         <motion.div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
           {imageList.map((i, idx) => {
             return (
