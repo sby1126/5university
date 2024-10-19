@@ -2,32 +2,64 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { supabase } from "@/utils/supabase/client";
+import { useEffect } from "react";
+import { useState } from "react";
 
+interface ArtCategory {
+  id: number;
+  created_at: Date;
+  category_name: string;
+  category_bg_path: string;
+}
 export default function ImageCategory() {
-  const categoryList = ["Sculpture", "Paper Work", "Painting"];
+  const [categoryList, setCategoryList] = useState<ArtCategory[]>([]);
+  async function selectArtCategory(): Promise<ArtCategory[] | null | undefined> {
+    try {
+      const { data: result } = await supabase
+        .from("ART_CATEGORY")
+        .select();
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    async function callCategoryList() {
+      const tempList: ArtCategory[] | null | undefined = await selectArtCategory();
+      if (tempList != null && tempList != undefined) {
+        setCategoryList(tempList);
+      }
+    }
+    callCategoryList();
+  }, []);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 items-center">
-      {categoryList.map((i, idx) => {
-        return (
-          <Link href={`/sub/arts/${i.replace(" ", "")}`} key={idx}>
-            <motion.div className="relative w-80 h-80 overflow-hidden flex justify-center items-center">
-              <Image
-                className="object-cover w-full h-full opacity-55"
-                src={`/images/${i}.jpeg`}
-                alt=""
-              />
-              <motion.div
-                className="absolute w-full h-full flex justify-center items-center"
-                whileHover={{ scale: 1.2 }}
-              >
-                <span className="text-[1.5rem] text-white cursor-pointer">
-                  {i}
-                </span>
+      {(categoryList != null && categoryList != undefined) &&
+        categoryList.map((i, idx) => {
+          return (
+            <Link href={`/sub/arts/${i.category_name.replace(" ", "")}`} key={idx}>
+              <motion.div className="relative w-80 h-80 overflow-hidden flex justify-center items-center">
+                <Image
+                  loader={() => i.category_bg_path}
+                  className="object-cover w-full h-full opacity-55"
+                  src={i.category_bg_path}
+                  alt=""
+                />
+                <motion.div
+                  className="absolute w-full h-full flex justify-center items-center"
+                  whileHover={{ scale: 1.2 }}
+                >
+                  <span className="text-[1.5rem] text-white cursor-pointer">
+                    {i.category_name}
+                  </span>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          </Link>
-        );
-      })}
+            </Link>
+          );
+        })}
     </div>
   );
 }
