@@ -41,22 +41,21 @@ export default function ImageCategory() {
         categoryList.map((i, idx) => {
           return (
             <Link href={`/sub/arts/${i.category_name.replace(" ", "")}`} key={idx}>
-              <motion.div className="relative w-80 h-80 overflow-hidden flex justify-center items-center">
+              <div className="relative w-80 h-80 overflow-hidden flex justify-center items-center">
                 <Image
                   loader={() => i.category_bg_path}
                   className="object-cover w-full h-full opacity-55"
                   src={i.category_bg_path}
                   alt=""
                 />
-                <motion.div
-                  className="absolute w-full h-full flex justify-center items-center"
-                  whileHover={{ scale: 1.2 }}
+                <div
+                  className="absolute w-full h-full flex justify-center items-center transition-all duration-300 hover:scale-125"
                 >
                   <span className="text-[1.5rem] text-white cursor-pointer">
                     {i.category_name}
                   </span>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </Link>
           );
         })}
