@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "https://mwzuvsuhvsggcpgwznlm.supabase.co/storage/v1/object/public/ART_STORAGE/",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "mwzuvsuhvsggcpgwznlm.supabase.co",
+        port: "",
+        pathname: "/storage/v1/object/public/**",
+      },
     ],
+    // domains: [
+    //   "https://mwzuvsuhvsggcpgwznlm.supabase.co/storage/v1/object/public/ART_STORAGE/",
+    // ],
   },
   webpack: (config) => {
     config.module.rules.push({

@@ -10,7 +10,7 @@ export default function StatementPage() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="p-20">
+      <div className="sm:px-2 mt-5">
         <div className="gap-5 flex flex-col">
           <p className="font-semibold text-white text-[1.5rem]">My Show</p>
           <p className="text-white text-[1rem]">

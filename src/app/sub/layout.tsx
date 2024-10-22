@@ -1,45 +1,56 @@
 "use client";
 import Link from "next/link";
 import "../globals.css";
+import { Lora } from "next/font/google";
+import MenuIcon from "../../../public/menu.svg";
+const lora = Lora({ weight: "400", subsets: ["latin"], style: "italic" });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col h-screen p-10 animate-fade">
-      <header className="sticky top-0 flex justify-between items-center border-white">
-        <Link href="/" className="text-[1.5rem] md:text-[2rem] tracking-wide">
-          <h1>5university</h1>
-        </Link>
+    <div className="grid w-full h-screen p-5 animate-fade justify-center items-center gap-5 justify-items-center ">
+      <div className="flex flex-col w-full max-w-[1200px] gap-5 justify-center">
+        <header className="hidden sticky top-0 md:flex justify-center items-center border-white">
+          <Link href="/" className="text-2xl md:text-[2rem] tracking-wide">
+            <span className={`${lora.className} text-4xl`}>DaeHak.Oh</span>
+          </Link>
+        </header>
         {/* mobile menu */}
-        <nav className="text-[1rem] md:text-[1.5rem] justify-between px-5 hidden lg:flex gap-8">
-          <div className="flex text-lg group relative w-max cursor-pointer">
+        <header className="md:hidden flex justify-between items-center w-full">
+          <Link href="/" className="text-xl md:text-[2rem] tracking-wide">
+            <span className={`${lora.className} text-4xl`}>DaeHak.Oh</span>
+          </Link>
+          <MenuIcon width={45} height={45} />
+        </header>
+        <nav className="text-[1rem] md:text-[1.5rem] hidden lg:flex gap-10 justify-center">
+          <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/arts" className="text-center">
               Arts
             </Link>
             <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
             <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
           </div>
-          <div className="flex text-lg group relative w-max cursor-pointer">
+          <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/about" className="text-center">
               About
             </Link>
             <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
             <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
           </div>
-          <div className="flex text-lg group relative w-max cursor-pointer">
+          <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/statement" className="text-center">
               Statement
             </Link>
             <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
             <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
           </div>
-          <div className="flex text-lg group relative w-max cursor-pointer">
+          <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/cv" className="text-center">
               CV
             </Link>
             <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
             <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
           </div>
-          <div className="flex text-lg group relative w-max cursor-pointer">
+          <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/contact" className="text-center">
               Contact
             </Link>
@@ -47,8 +58,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
           </div>
         </nav>
-      </header>
-      <div className="flex-auto pt-10">{children}</div>
+      </div>
+      <div className="flex-auto">{children}</div>
     </div>
   );
 }

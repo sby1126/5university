@@ -14,11 +14,11 @@ interface ArtCategory {
 }
 export default function ImageCategory() {
   const [categoryList, setCategoryList] = useState<ArtCategory[]>([]);
-  async function selectArtCategory(): Promise<ArtCategory[] | null | undefined> {
+  async function selectArtCategory(): Promise<
+    ArtCategory[] | null | undefined
+  > {
     try {
-      const { data: result } = await supabase
-        .from("ART_CATEGORY")
-        .select();
+      const { data: result } = await supabase.from("ART_CATEGORY").select();
       return result;
     } catch (error) {
       console.log(error);
@@ -27,7 +27,8 @@ export default function ImageCategory() {
 
   useEffect(() => {
     async function callCategoryList() {
-      const tempList: ArtCategory[] | null | undefined = await selectArtCategory();
+      const tempList: ArtCategory[] | null | undefined =
+        await selectArtCategory();
       if (tempList != null && tempList != undefined) {
         setCategoryList(tempList);
       }
@@ -37,20 +38,22 @@ export default function ImageCategory() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 items-center">
-      {(categoryList != null && categoryList != undefined) &&
+      {categoryList != null &&
+        categoryList != undefined &&
         categoryList.map((i, idx) => {
           return (
-            <Link href={`/sub/arts/${i.category_name.replace(" ", "")}`} key={idx}>
-              <div className="relative w-80 h-80 overflow-hidden flex justify-center items-center">
+            <Link
+              href={`/sub/arts/${i.category_name.replace(" ", "")}`}
+              key={idx}
+            >
+              <div className="relative w-80 h-[400px] overflow-hidden flex justify-center items-center">
                 <Image
                   loader={() => i.category_bg_path}
                   className="object-cover w-full h-full opacity-55"
                   src={i.category_bg_path}
                   alt=""
                 />
-                <div
-                  className="absolute w-full h-full flex justify-center items-center transition-all duration-300 hover:scale-125"
-                >
+                <div className="absolute w-full h-full flex justify-center items-center transition-all duration-300 hover:scale-125">
                   <span className="text-[1.5rem] text-white cursor-pointer">
                     {i.category_name}
                   </span>
