@@ -48,74 +48,69 @@ export default function ImageGridAuto({ slug }: SlugProps) {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <div>
-        <motion.div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-          {imageList.map((i, idx) => {
-            return (
-              <motion.div
-                className="overflow-hidden mb-5 hover:opacity-65 relative h-[400px]"
-                key={idx}
-              >
-                <motion.img
-                  className="object-scale-down w-full h-full absolute object-center"
-                  layoutId={`index_${idx}`}
-                  src={i.path}
-                  onClick={() => openImages(i.path)}
-                />
-                <div
-                  className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-2xl text-white font-semibold"
-                  onClick={() => openImages(i.path)}
-                >
-                  {i.title}
-                </div>
-              </motion.div>
-            );
-          })}
-          {selectedImage ? (
+    <div className="w-full h-full">
+      <motion.div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+        {imageList.map((i, idx) => {
+          return (
             <motion.div
-              className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none z-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              className="overflow-hidden mb-5 hover:opacity-65 relative h-[400px]"
+              key={idx}
             >
-              <div className="w-full h-4/5 justify-center text-center hidden lg:flex">
-                <Image
-                  loader={() => selectedImage}
-                  src={`${selectedImage}`}
-                  alt=""
-                  className="object-scale-down w-auto h-auto"
-                  onClick={() => setSelectedImage(null)}
-                />
-                <span className="text-white text-lg ml-10">
-                  {imageList
-                    .filter((i) => i.path == selectedImage)
-                    .map((i) => i.title)}
-                </span>
-              </div>
-
-              <div className="w-full h-full text-center p-5 lg:hidden ">
-                <Image
-                  loader={() => selectedImage}
-                  src={`${selectedImage}`}
-                  alt=""
-                  className="object-scale-down"
-                  onClick={() => setSelectedImage(null)}
-                />
-                <span className="text-white text-lg mt-10">
-                  {imageList
-                    .filter((i) => i.path == selectedImage)
-                    .map((i) => i.title)}
-                </span>
+              <Image
+                className="object-scale-down w-full h-full absolute object-center"
+                id={`index_${idx}`}
+                src={i.path}
+                alt=""
+                onClick={() => openImages(i.path)}
+              />
+              <div
+                className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-2xl text-white font-semibold"
+                onClick={() => openImages(i.path)}
+              >
+                {i.title}
               </div>
             </motion.div>
-          ) : null}
-        </motion.div>
-      </div>
-    </motion.div>
+          );
+        })}
+        {selectedImage ? (
+          <motion.div
+            className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="w-full h-4/5 justify-center text-center hidden lg:flex">
+              <Image
+                loader={() => selectedImage}
+                src={`${selectedImage}`}
+                alt=""
+                className="object-scale-down w-auto h-auto"
+                onClick={() => setSelectedImage(null)}
+              />
+              <span className="text-white text-lg ml-10">
+                {imageList
+                  .filter((i) => i.path == selectedImage)
+                  .map((i) => i.title)}
+              </span>
+            </div>
+
+            <div className="w-full h-full text-center p-5 lg:hidden ">
+              <Image
+                loader={() => selectedImage}
+                src={`${selectedImage}`}
+                alt=""
+                className="object-scale-down"
+                onClick={() => setSelectedImage(null)}
+              />
+              <span className="text-white text-lg mt-10">
+                {imageList
+                  .filter((i) => i.path == selectedImage)
+                  .map((i) => i.title)}
+              </span>
+            </div>
+          </motion.div>
+        ) : null}
+      </motion.div>
+    </div>
   );
 }

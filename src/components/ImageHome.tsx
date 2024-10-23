@@ -40,9 +40,17 @@ export default function ImageHome({ imageList }: ArtProps) {
                   key={`${idx}_images`}
                   src={item.path}
                   alt=""
-                  className="object-cover obejct-top w-full h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110"
+                  className="hidden md:block relative object-cover obejct-top w-full h-auto z-0 rounded-lg transition-all duration-300 hover:scale-110"
                   width={400}
                   height={450}
+                />
+                <Image
+                  key={`${idx}_images`}
+                  src={item.path}
+                  alt=""
+                  className="md:hidden block relative object-cover obejct-top z-0 rounded-lg mb-5"
+                  width={400}
+                  height={400}
                 />
               </Link>
             </div>

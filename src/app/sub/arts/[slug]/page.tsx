@@ -33,11 +33,7 @@ export default async function CategoryPage({ params }: Props) {
     notFound();
   }
 
-  return (
-    <div>
-      <ImageGridAuto slug={params.slug} />
-    </div>
-  );
+  return <ImageGridAuto slug={params.slug} />;
 }
 
 export function generateStaticParams() {

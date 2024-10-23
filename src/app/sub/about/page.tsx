@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import mailgo from "mailgo";
+import MailIcon from "../../../../public/mail.svg";
 
 interface MyProfile {
   id: number;
@@ -47,6 +49,7 @@ export default function ArtsPage() {
       }
     }
     callProfile();
+    mailgo();
   }, []);
   return (
     <motion.div
@@ -90,14 +93,17 @@ export default function ArtsPage() {
                 </svg>{" "}
                 {myProfile?.location}
               </p>
+              <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+                <MailIcon className="h-4 text-gray-700 pr-4" />
+                {"daehakoh1998@gmail.com"}
+              </p>
               <p className="pt-8 text-sm">{myProfile?.description}</p>
 
               <div className="pt-12 pb-8 flex items-center justify-center lg:justify-start">
-                <Link href="/sub/contact">
-                  <button className="border-2 border-black bg-white  hover:bg-black hover:text-white text-black font-bold py-2 px-4 rounded-full">
-                    Contact the Artist
-                  </button>
-                </Link>
+                <button className="border-2 border-black bg-white  hover:bg-black hover:text-white text-black font-bold py-2 px-4 rounded-full">
+                  <a href="mailto:daehakoh1998@gmail.com">Contact the Artist</a>
+                </button>
+
                 <a
                   className="link ml-5"
                   href="https://www.instagram.com/5university"

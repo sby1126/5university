@@ -7,9 +7,9 @@ const lora = Lora({ weight: "400", subsets: ["latin"], style: "italic" });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid w-full h-screen p-5 animate-fade justify-center items-center gap-5 justify-items-center ">
+    <div className="flex flex-col w-full h-auto md:h-full p-5 animate-fade justify-center items-center gap-5 justify-items-center ">
       <div className="flex flex-col w-full max-w-[1200px] gap-5 justify-center">
-        <header className="hidden sticky top-0 md:flex justify-center items-center border-white">
+        <header className="hidden py-5 sticky top-0 md:flex justify-center items-center border-white">
           <Link href="/" className="text-2xl md:text-[2rem] tracking-wide">
             <span className={`${lora.className} text-4xl`}>DaeHak.Oh</span>
           </Link>
@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </nav>
       </div>
-      <div className="flex-auto">{children}</div>
+      <div className="flex-1 h-full w-full">{children}</div>
     </div>
   );
 }
