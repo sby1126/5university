@@ -3,9 +3,13 @@ import Link from "next/link";
 import "../globals.css";
 import { Lora } from "next/font/google";
 import MenuIcon from "../../../public/menu.svg";
+import { useState } from "react";
+import MenuToggle from "@/components/MenuToggle";
+import Drawer from "@/components/Drawer";
 const lora = Lora({ weight: "400", subsets: ["latin"], style: "italic" });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const [menuToggle, setMenuToggle] = useState<boolean>(false);
   return (
     <div className="flex flex-col w-full h-auto md:h-full p-5 animate-fade justify-center items-center gap-5 justify-items-center ">
       <div className="flex flex-col w-full max-w-[1200px] gap-5 justify-center">
@@ -15,11 +19,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
         </header>
         {/* mobile menu */}
-        <header className="md:hidden flex justify-between items-center w-full">
+        <header className="flex justify-between items-center md:hidden">
           <Link href="/" className="text-xl md:text-[2rem] tracking-wide">
             <span className={`${lora.className} text-4xl`}>DaeHak.Oh</span>
           </Link>
-          <MenuIcon width={45} height={45} />
+          <MenuIcon
+            width={40}
+            height={40}
+            onClick={() => setMenuToggle(!menuToggle)}
+          />
+          <Drawer open={menuToggle} setOpen={setMenuToggle} side="top" />
         </header>
         <nav className="text-[1rem] md:text-[1.5rem] hidden lg:flex gap-10 justify-center">
           <div className="flex text-2xl group relative w-max cursor-pointer">

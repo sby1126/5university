@@ -47,6 +47,14 @@ export default function ImageGridAuto({ slug }: SlugProps) {
     callImageList();
   }, []);
 
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [selectedImage]);
+
   return (
     <div className="w-full h-full">
       <motion.div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
@@ -94,15 +102,16 @@ export default function ImageGridAuto({ slug }: SlugProps) {
               </span>
             </div>
 
-            <div className="w-full h-full text-center p-5 lg:hidden ">
+            {/* mobile view */}
+            <div className="w-full h-full text-center p-5 lg:hidden flex flex-col">
               <Image
                 loader={() => selectedImage}
                 src={`${selectedImage}`}
                 alt=""
-                className="object-scale-down"
+                className="object-scale-down flex-1"
                 onClick={() => setSelectedImage(null)}
               />
-              <span className="text-white text-lg mt-10">
+              <span className="text-white text-lg mt-10 py-10">
                 {imageList
                   .filter((i) => i.path == selectedImage)
                   .map((i) => i.title)}
