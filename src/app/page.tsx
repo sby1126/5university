@@ -10,6 +10,7 @@ export default function Home() {
           className="w-full h-full object-cover opacity-80"
           alt=""
           fill
+          priority
         />
         <Link
           href="/sub"

@@ -52,11 +52,8 @@ export default function ArtsPage() {
     mailgo();
   }, []);
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="w-full h-full flex justify-center items-center"
+    <div
+      className="w-full h-full flex justify-center items-center pt-10"
     >
       <div className="text-gray-900 leading-normal tracking-wider bg-cover">
         <div className="max-w-4xl flex items-center h-auto lg:h-full flex-wrap">
@@ -158,11 +155,12 @@ export default function ArtsPage() {
                 src={myProfile.profile_path}
                 className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
                 alt=""
+                priority
               />
             )}
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -48,6 +48,7 @@ export default function ImageCategory() {
             >
               <div className="relative w-80 h-[350px] overflow-hidden flex justify-center items-center">
                 <Image
+                  priority
                   loader={() => i.category_bg_path}
                   className="object-cover w-full h-full opacity-55"
                   src={i.category_bg_path}

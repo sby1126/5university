@@ -43,6 +43,7 @@ export default function ImageHome({ imageList }: ArtProps) {
                   className="hidden md:block relative object-cover obejct-top w-full h-auto z-0 rounded-lg transition-all duration-300 hover:scale-110"
                   width={400}
                   height={450}
+                  priority
                 />
                 <Image
                   key={`${idx}_images`}
@@ -51,6 +52,7 @@ export default function ImageHome({ imageList }: ArtProps) {
                   className="md:hidden block relative object-cover obejct-top z-0 rounded-lg mb-5"
                   width={400}
                   height={400}
+                  priority
                 />
               </Link>
             </div>

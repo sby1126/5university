@@ -56,30 +56,41 @@ export default function ImageGridAuto({ slug }: SlugProps) {
   }, [selectedImage]);
 
   return (
-    <div className="w-full h-full">
-      <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-        {imageList.map((i, idx) => {
-          return (
+    <div className="w-full h-full pt-10">
+      <div className="w-full relative">
+        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-2 lg:columns-4 [&>img:not(:first-child)]:mt-8 rounded-lg">
+          {imageList.map((item, idx) => (
             <div
-              className="overflow-hidden mb-5 hover:opacity-65 relative h-[400px]"
-              key={idx}
+              key={`${idx}_div`}
+              className="w-full relative mx-auto h-auto overflow-hidden rounded-lg "
             >
               <Image
-                className="object-scale-down w-full h-full absolute object-center"
-                id={`index_${idx}`}
-                src={i.path}
+                key={`${idx}_images`}
+                src={item.path}
                 alt=""
-                onClick={() => openImages(i.path)}
+                className="hidden md:block relative object-cover obejct-top w-full h-auto z-0 rounded-lg transition-all duration-300 hover:scale-110"
+                width={400}
+                height={450}
+                priority
+              />
+              <Image
+                key={`${idx}_images`}
+                src={item.path}
+                alt=""
+                className="md:hidden block relative object-cover obejct-top z-0 rounded-lg mb-5"
+                width={400}
+                height={400}
+                priority
               />
               <div
-                className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-2xl text-white font-semibold"
-                onClick={() => openImages(i.path)}
+                className="hidden md:flex opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10  justify-center items-center text-2xl text-white font-semibold"
+                onClick={() => openImages(item.path)}
               >
-                {i.title}
+                {item.title}
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
         {selectedImage ? (
           <div
             className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none z-10"
@@ -107,6 +118,7 @@ export default function ImageGridAuto({ slug }: SlugProps) {
                 alt=""
                 className="object-scale-down flex-1"
                 onClick={() => setSelectedImage(null)}
+                priority
               />
               <span className="text-white text-lg mt-10 py-10">
                 {imageList
