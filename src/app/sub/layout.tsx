@@ -4,7 +4,6 @@ import "../globals.css";
 import { Lora } from "next/font/google";
 import MenuIcon from "../../../public/menu.svg";
 import { useState } from "react";
-import MenuToggle from "@/components/MenuToggle";
 import Drawer from "@/components/Drawer";
 const lora = Lora({ weight: "400", subsets: ["latin"], style: "italic" });
 

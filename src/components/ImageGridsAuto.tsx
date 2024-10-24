@@ -57,10 +57,10 @@ export default function ImageGridAuto({ slug }: SlugProps) {
 
   return (
     <div className="w-full h-full">
-      <motion.div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+      <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
         {imageList.map((i, idx) => {
           return (
-            <motion.div
+            <div
               className="overflow-hidden mb-5 hover:opacity-65 relative h-[400px]"
               key={idx}
             >
@@ -77,15 +77,12 @@ export default function ImageGridAuto({ slug }: SlugProps) {
               >
                 {i.title}
               </div>
-            </motion.div>
+            </div>
           );
         })}
         {selectedImage ? (
-          <motion.div
+          <div
             className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
           >
             <div className="w-full h-4/5 justify-center text-center hidden lg:flex">
               <Image
@@ -117,9 +114,9 @@ export default function ImageGridAuto({ slug }: SlugProps) {
                   .map((i) => i.title)}
               </span>
             </div>
-          </motion.div>
+          </div>
         ) : null}
-      </motion.div>
+      </div>
     </div>
   );
 }
