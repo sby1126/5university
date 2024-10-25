@@ -6,6 +6,7 @@ import MenuIcon from "../../../public/menu.svg";
 import { useState } from "react";
 import Drawer from "@/components/Drawer";
 const lora = Lora({ weight: "400", subsets: ["latin"], style: "italic" });
+const lora2 = Lora({ weight: "400", subsets: ["latin"]);
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
@@ -27,8 +28,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             height={40}
             onClick={() => setMenuToggle(!menuToggle)}
           />
-          <Drawer open={menuToggle} setOpen={setMenuToggle} side="top" />
         </header>
+        <Drawer open={menuToggle} setOpen={setMenuToggle} side="top" />
         <nav className="text-[1rem] md:text-[1.5rem] hidden lg:flex gap-10 justify-center">
           <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/arts" className="text-center">

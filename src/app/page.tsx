@@ -14,7 +14,7 @@ export default function Home() {
         />
         <Link
           href="/sub"
-          className="absolute text-[2rem] md:text-[5rem] tracking-wide text-white"
+          className="absolute text-[2.5rem] md:text-[5rem] tracking-wide text-white"
         >
           5university
         </Link>
