@@ -6,7 +6,7 @@ import MenuIcon from "../../../public/menu.svg";
 import { useState } from "react";
 import Drawer from "@/components/Drawer";
 const lora = Lora({ weight: "400", subsets: ["latin"], style: "italic" });
-const lora2 = Lora({ weight: "400", subsets: ["latin"]);
+const lora2 = Lora({ weight: "400", subsets: ["latin"] });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
