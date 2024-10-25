@@ -37,7 +37,7 @@ export default function Upload() {
 
       const { data: imgUrl } = await supabase.storage
         .from("ART_STORAGE")
-        .getPublicUrl(`${imageUplodFile!.name}` ?? "default");
+        .getPublicUrl(`${imageUplodFile!.name}`);
 
       if (imgUrl) {
         setImageUrl(imgUrl.publicUrl);
