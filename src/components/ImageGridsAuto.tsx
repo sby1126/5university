@@ -3,8 +3,9 @@ import { supabase } from "@/utils/supabase/client";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import SelectImage from "./SelectImages";
 
-interface ArtData {
+export interface ArtData {
   id: number;
   create_at: Date;
   title: string;
@@ -92,41 +93,43 @@ export default function ImageGridAuto({ slug }: SlugProps) {
           ))}
         </div>
         {selectedImage ? (
-          <div
-            className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none z-10"
-          >
-            <div className="w-full h-4/5 justify-center text-center hidden lg:flex">
-              <Image
-                loader={() => selectedImage}
-                src={`${selectedImage}`}
-                alt=""
-                className="object-scale-down w-auto h-auto"
-                onClick={() => setSelectedImage(null)}
-              />
-              <span className="text-white text-lg ml-10">
-                {imageList
-                  .filter((i) => i.path == selectedImage)
-                  .map((i) => i.title)}
-              </span>
-            </div>
+          // <div className="animate-open-image p-100 flex justify-center items-center bg-black overscroll-none z-10">
+          //   <div className="w-full h-4/5 justify-center text-center hidden lg:flex">
+          //     <Image
+          //       loader={() => selectedImage}
+          //       src={`${selectedImage}`}
+          //       alt=""
+          //       className="object-scale-down w-auto h-auto"
+          //       onClick={() => setSelectedImage(null)}
+          //     />
+          //     <span className="text-white text-lg ml-10">
+          //       {imageList
+          //         .filter((i) => i.path == selectedImage)
+          //         .map((i) => i.title)}
+          //     </span>
+          //   </div>
 
-            {/* mobile view */}
-            <div className="w-full h-full text-center p-5 lg:hidden flex flex-col">
-              <Image
-                loader={() => selectedImage}
-                src={`${selectedImage}`}
-                alt=""
-                className="object-scale-down flex-1"
-                onClick={() => setSelectedImage(null)}
-                priority
-              />
-              <span className="text-white text-lg mt-10 py-10">
-                {imageList
-                  .filter((i) => i.path == selectedImage)
-                  .map((i) => i.title)}
-              </span>
-            </div>
-          </div>
+          //   {/* mobile view */}
+          //   <div className="w-full h-full text-center p-5 lg:hidden flex flex-col">
+          //     <Image
+          //       loader={() => selectedImage}
+          //       src={`${selectedImage}`}
+          //       alt=""
+          //       className="object-scale-down flex-1"
+          //       onClick={() => setSelectedImage(null)}
+          //       priority
+          //     />
+          //     <span className="text-white text-lg mt-10 py-10">
+          //       {imageList
+          //         .filter((i) => i.path == selectedImage)
+          //         .map((i) => i.title)}
+          //     </span>
+          //   </div>
+          // </div>
+          <SelectImage
+            setSelectedImage={setSelectedImage}
+            item={imageList.filter((i) => i.path == selectedImage)[0]}
+          />
         ) : null}
       </div>
     </div>
