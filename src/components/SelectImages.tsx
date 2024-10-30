@@ -25,10 +25,13 @@ export default function SelectImage({ item, setSelectedImage }: SelectProps) {
       <div className="w-full h-full justify-between text-center hidden lg:flex">
         <div className="w-1/2 h-full flex flex-col gap-10 justify-center items-center">
           <p className="text-white text-4xl font-bold">{`"${item.title}"`}</p>
-          <p className="text-white text-lg">{item.content}</p>
+          <p
+            className="text-white text-lg"
+            dangerouslySetInnerHTML={{ __html: item.content }}
+          ></p>
         </div>
         <div className="w-1/2 flex flex-col justify-center gap-7">
-          <div className="w-[500px] h-[600px] overflow-hidden">
+          <div className="w-[500px] overflow-hidden">
             <Image
               loader={() => selectDetail}
               src={`${selectDetail}`}
