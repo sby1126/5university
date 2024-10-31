@@ -57,7 +57,7 @@ export default function ImageGridAuto({ slug }: SlugProps) {
   }, [selectedImage]);
 
   return (
-    <div className="w-full h-full pt-10">
+    <div className="w-full h-full px-5">
       <div className="w-full relative">
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-2 lg:columns-4 [&>img:not(:first-child)]:mt-8 rounded-lg">
           {imageList.map((item, idx) => (
@@ -69,7 +69,7 @@ export default function ImageGridAuto({ slug }: SlugProps) {
                 key={`${idx}_images`}
                 src={item.path}
                 alt=""
-                className="hidden md:block relative object-cover obejct-top w-full h-auto z-0 rounded-lg transition-all duration-300 hover:scale-110"
+                className="hidden md:block relative object-cover obejct-top w-full h-auto z-0 rounded-lg transition-all duration-300 group-hover:opacity-40 mb-5"
                 width={400}
                 height={450}
                 priority
@@ -82,9 +82,10 @@ export default function ImageGridAuto({ slug }: SlugProps) {
                 width={400}
                 height={400}
                 priority
+                onClick={() => openImages(item.path)}
               />
               <div
-                className="hidden md:flex opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10  justify-center items-center text-2xl text-white font-semibold"
+                className="hidden md:flex opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-0 justify-center items-center text-2xl text-white font-semibold cursor-pointer"
                 onClick={() => openImages(item.path)}
               >
                 {item.title}

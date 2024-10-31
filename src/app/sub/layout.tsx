@@ -11,15 +11,11 @@ const lora2 = Lora({ weight: "400", subsets: ["latin"] });
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
   return (
-    <div className="flex flex-col w-full h-auto md:h-full p-5 animate-fade justify-center items-center gap-5 justify-items-center ">
-      <div className="flex flex-col w-full max-w-[1200px] gap-5 justify-center">
-        <header className="hidden py-5 sticky top-0 md:flex justify-center items-center border-white">
-          <Link href="/" className="text-2xl md:text-[2rem] tracking-wide">
-            <span className={`${lora.className} text-4xl`}>DaeHak.Oh</span>
-          </Link>
-        </header>
+    <div className="flex flex-col w-full h-full p-5 animate-fade justify-center items-center gap-5 justify-items-center ">
+      {/* Mobile Header */}
+      <div className="flex flex-col w-full gap-5 justify-center md:hidden fixed top-0 z-10 bg-black">
         {/* mobile menu */}
-        <header className="flex justify-between items-center md:hidden">
+        <header className="flex justify-between items-center p-5">
           <Link href="/" className="text-xl md:text-[2rem] tracking-wide">
             <span className={`${lora.className} text-4xl`}>DaeHak.Oh</span>
           </Link>
@@ -30,7 +26,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           />
         </header>
         <Drawer open={menuToggle} setOpen={setMenuToggle} side="top" />
-        <nav className="text-[1rem] md:text-[1.5rem] hidden lg:flex gap-10 justify-center">
+      </div>
+      {/* Web Header */}
+      <div className="hidden md:flex flex-col w-full gap-5 justify-center items-center fixed top-0 bg-black z-10 py-5">
+        <header className="hidden py-5 sticky top-0 md:flex justify-center items-center border-white">
+          <Link href="/" className="text-2xl md:text-[2rem] tracking-wide">
+            <span className={`${lora.className} text-4xl`}>DaeHak.Oh</span>
+          </Link>
+        </header>
+        <nav className="text-[1rem] md:text-[1.5rem] hidden lg:flex gap-10 justify-center max-w-[1200px]">
+          <div className="flex text-2xl group relative w-max cursor-pointer">
+            <Link href="/sub" className="text-center">
+              Home
+            </Link>
+            <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+            <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+          </div>
           <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/arts" className="text-center">
               Arts
@@ -59,16 +70,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
             <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
           </div>
-          <div className="flex text-2xl group relative w-max cursor-pointer">
+          {/* <div className="flex text-2xl group relative w-max cursor-pointer">
             <Link href="/sub/contact" className="text-center">
               Contact
             </Link>
             <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
             <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
-          </div>
+          </div> */}
         </nav>
       </div>
-      <div className="flex-1 h-full w-full">{children}</div>
+      <div className="h-full w-full flex-1 pt-[80px] md:pt-[200px]">
+        {children}
+      </div>
     </div>
   );
 }

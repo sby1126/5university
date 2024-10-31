@@ -37,10 +37,9 @@ export default function SelectImage({ item, setSelectedImage }: SelectProps) {
               src={`${selectDetail}`}
               alt=""
               className="object-scale-down animate-fade object-top"
-              onClick={() => setSelectedImage(null)}
             />
           </div>
-          <div className="w-full flex gap-5 justify-start">
+          {/* <div className="w-full flex gap-5 justify-start">
             <div className="overflow-hidden w-[100px] h-[100px] relative rounded-sm">
               <Image
                 //   loader={() => item.path}
@@ -66,12 +65,12 @@ export default function SelectImage({ item, setSelectedImage }: SelectProps) {
               height={80}
               onClick={() => setSelectedImage(null)}
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* mobile view */}
-      <div className="w-full h-full text-center p-5 lg:hidden flex flex-col">
+      <div className="w-full text-center p-5 lg:hidden flex flex-col">
         <Image
           loader={() => item.path}
           src={`${item.path}`}
@@ -80,7 +79,11 @@ export default function SelectImage({ item, setSelectedImage }: SelectProps) {
           onClick={() => setSelectedImage(null)}
           priority
         />
-        <span className="text-white text-lg mt-10 py-10">{item.title}</span>
+        <span className="text-white text-lg mt-10">{item.title}</span>
+        <span
+          className="text-white text-lg mt-5"
+          dangerouslySetInnerHTML={{ __html: item.content }}
+        ></span>
       </div>
     </div>
   );

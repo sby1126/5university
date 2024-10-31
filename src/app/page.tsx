@@ -6,10 +6,11 @@ export default function Home() {
     <div className="animate-fade">
       <main className="w-full h-screen flex justify-center items-center relative text-center">
         <Image
-          src="/images/Paper Work.jpeg"
-          className="w-full h-full object-cover opacity-80"
+          src={`${process.env.NEXT_PUBLIC_SUPABASE_URL!}${
+            process.env.NEXT_PUBLIC_IMAGE_URL
+          }${process.env.NEXT_PUBLIC_STORAGE_BUCKET}/Main_Background.jpg`}
           alt=""
-          fill
+          className="object-cover object-center w-full h-full opacity-80"
           priority
         />
         <Link

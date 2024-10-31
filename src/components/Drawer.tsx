@@ -48,7 +48,7 @@ export default function Drawer({ open, setOpen, side = "top" }: toggleProps) {
   return (
     <div
       id={`dialog-${side}`}
-      className="relative z-10"
+      className="relative z-20"
       aria-labelledby="slide-over"
       role="dialog"
       aria-modal="true"
@@ -89,6 +89,13 @@ export default function Drawer({ open, setOpen, side = "top" }: toggleProps) {
               >
                 <Link
                   className="py-5"
+                  href="/sub"
+                  onClick={() => setOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  className="py-5"
                   href="/sub/arts"
                   onClick={() => setOpen(false)}
                 >
@@ -115,13 +122,13 @@ export default function Drawer({ open, setOpen, side = "top" }: toggleProps) {
                 >
                   Statement
                 </Link>
-                <Link
+                {/* <Link
                   className="py-5"
                   href="/sub/contatct"
                   onClick={() => setOpen(false)}
                 >
                   Contact
-                </Link>
+                </Link> */}
                 <div className="py-3" onClick={() => setOpen(false)}>
                   <svg
                     className="h-6 w-6"
