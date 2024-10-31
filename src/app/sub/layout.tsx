@@ -11,7 +11,7 @@ const lora2 = Lora({ weight: "400", subsets: ["latin"] });
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
   return (
-    <div className="flex flex-col w-full h-full p-5 animate-fade justify-center items-center gap-5 justify-items-center ">
+    <div className="flex flex-col w-full h-full animate-fade justify-center items-center gap-5 justify-items-center ">
       {/* Mobile Header */}
       <div className="flex flex-col w-full gap-5 justify-center md:hidden fixed top-0 z-10 bg-black">
         {/* mobile menu */}
@@ -79,7 +79,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div> */}
         </nav>
       </div>
-      <div className="h-full w-full flex-1 pt-[80px] md:pt-[200px]">
+      <div className="h-full w-full flex-1 pt-[100px] md:pt-[210px]">
         {children}
       </div>
     </div>
