@@ -68,7 +68,7 @@ export default function ArtsPage() {
               <h1 className="text-3xl font-bold pt-8 lg:pt-0">
                 {myProfile?.name}
               </h1>
-              <div className="mx-2 lg:mx-0 w-4/5 pt-3 border-b-2 border-black"></div>
+              <div className="mx-2 lg:mx-0 w-full md:w-4/5 pt-3 border-b-2 border-black"></div>
               <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
                 <svg
                   className="h-4 fill-current text-gray-700 pr-4"
