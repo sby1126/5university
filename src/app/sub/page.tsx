@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { createClient } from "@/utils/supabase/server";
 import ImageHome from "@/components/ImageHome";
+import Link from "next/link";
 
 interface ArtData {
   id: number;
@@ -66,16 +67,18 @@ export default async function Sub() {
               {`I'm Artist 5university.`}
             </h3>
             <p className="text-gray-600 text-justify mt-10">
-              My art is a deeply personal exploration of the complex
-              relationship between my body and the color black.
+            The color of black encapsulates my own existence, the way it absorbs everything, 
+            leaving no trace as to what went into its making.
             </p>
             <a
               className="flex items-baseline mt-10 text-gray-600 hover:text-gray-900 focus:text-gray-900"
               href=""
             >
-              <span>
-                <b>My Art Works</b>
-              </span>
+              <Link href="/sub/arts" className="text-xl md:text-[2rem] tracking-wide">
+                <span>
+                  <b>My Art Works</b>
+                </span>
+              </Link>
               <span className="text-xs ml-1">&#x279c;</span>
             </a>
           </div>
