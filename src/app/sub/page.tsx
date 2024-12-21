@@ -75,7 +75,7 @@ export default async function Sub() {
               href=""
             >
               <Link href="/sub/arts" className="md:text-[2rem] tracking-wide">
-                <span className="text-sm">
+                <span className="text-lg">
                   <b>My Art Works</b>
                 </span>
               </Link>

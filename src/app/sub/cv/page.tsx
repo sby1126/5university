@@ -8,7 +8,7 @@ export default function CvPage() {
     <div
       className={`flex w-full justify-center items-center ${kanit.className}`}
     >
-      <div className="gap-5 flex flex-col w-full max-w-[500px] text-center">
+      <div className="gap-5 flex flex-col w-full max-w-[500px]">
         <p className="text-white text-[1rem]">
           <p className="text-xl font-extrabold">Education.</p>
         </p>
@@ -40,37 +40,37 @@ export default function CvPage() {
           <p className="text-xl font-extrabold">Exhibitions.</p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="flex"><div className={`${kanit_it.className}`}>Day and Night,</div> Rehall Art Gallery, Seoul, Korea</p>
+          <p className="flex"><span className={`${kanit_it.className}`}>Day and Night,</span> Rehall Art Gallery, Seoul, Korea</p>
           <p>August 2021</p>
           <p>Group exhibition of artists chosen by talent platform Leffica </p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="flex"><div className={`${kanit_it.className}`}>Threshold: Road to Utopia,</div> Chicago Korean Culture Center, Illinois, Chicago</p>
+          <p className="flex"><span className={`${kanit_it.className}`}>Threshold: Road to Utopia,</span> Chicago Korean Culture Center, Illinois, Chicago</p>
           <p> August 2022 - May 2023</p>
           <p>Founding member of SAIC Korean Student Association’s Exhibition Branch. Organized and curated event. Participated as an artist.</p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="flex"><div className={`${kanit_it.className}`}>Extinction and Creation,</div> Chicago Korean Culture Center, Illinois, Chicago</p>
+          <p className="flex"><span className={`${kanit_it.className}`}>Extinction and Creation,</span> Chicago Korean Culture Center, Illinois, Chicago</p>
           <p>September 2023 - December 2023</p>
           <p>Curated event as part of SAIC Korean Student Association’s Exhibition Branch. </p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="flex"><div className={`${kanit_it.className}`}>Veil: Between People,</div> Blue Cube Gallery, Seoul, Korea</p>
+          <p className="flex"><span className={`${kanit_it.className}`}>Veil: Between People,</span> Blue Cube Gallery, Seoul, Korea</p>
           <p>September 2024</p>
           <p>Solo Exhibition</p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="flex"><div className={`${kanit_it.className}`}>Beyond Border,</div> Group Art Show, Cosmos Gallery, New York, New York</p>
+          <p className="flex"><span className={`${kanit_it.className}`}>Beyond Border,</span> Group Art Show, Cosmos Gallery, New York, New York</p>
           <p>September 2024 - October 2024</p>
           <p>Group exhibition of artists chosen by Cosmos Gallery  </p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="flex"><div className={`${kanit_it.className}`}>Relationship, Veil, and Connections,</div> Vibe Art Space, Seoul, Korea</p>
+          <p className="flex"><span className={`${kanit_it.className}`}>Relationship, Veil, and Connections,</span> Vibe Art Space, Seoul, Korea</p>
           <p>November 2024</p>
           <p>Solo exhibition</p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="flex"><div className={`${kanit_it.className}`}>Undergraduate BFA Exhibition,</div> SAIC Gallery, Illinois, Chicago</p>
+          <p className="flex"><span className={`${kanit_it.className}`}>Undergraduate BFA Exhibition,</span> SAIC Gallery, Illinois, Chicago</p>
           <p>November 2024</p>
           <p>Presented Capstone group project Falling Tide. Participated as curator and artist. </p>
         </p>
