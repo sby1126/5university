@@ -53,7 +53,7 @@ export default function ArtsPage() {
   }, []);
   return (
     <div
-      className="w-full h-full flex justify-center items-center pt-10"
+      className="w-full h-full flex justify-center items-center pt-20 md:pt-10"
     >
       <div className="text-gray-900 leading-normal tracking-wider bg-cover">
         <div className="max-w-4xl flex items-center h-auto lg:h-full flex-wrap">
