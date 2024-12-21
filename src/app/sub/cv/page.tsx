@@ -10,40 +10,73 @@ export default function CvPage() {
     >
       <div className="gap-5 flex flex-col w-full max-w-[600px]">
         <p className="text-white text-[1rem]">
-          <p className="text-xl font-bold">Education</p>
+          <p className="text-xl font-extrabold">Education</p>
         </p>
         <p className="text-white text-[1rem]">
-          University of Wisconsin-Milwaukee, Milwaukee, Wisconsin
-          September 2017 - May 2019 
-          Film Major
-
-          School of the Art Institute of Chicago, Chicago, Illinois
-          2019 September - 2024 December
-          B.F.A.
+          <p>University of Wisconsin-Milwaukee, Milwaukee, Wisconsin</p>
+          <p>September 2017 - May 2019</p>
+          <p>Film Major</p>
+          <p></p>
+          <p>School of the Art Institute of Chicago, Chicago, Illinois</p>
+          <p>2019 September - 2024 December</p>
+          <p>B.F.A.</p>
+        </p>
+        <p className="text-white text-[1rem] mt-5">
+          <p className="text-xl font-extrabold">Work Experience</p>
         </p>
         <p className="text-white text-[1rem]">
-          <p className="text-xl font-bold">Work Experience</p>
+          <p>Republic of Korea Army, 22nd Division, HQ Command, Military Band, Korea</p>
+          <p>Sergeant, Percussion</p>
+          <p>2020 September - 2022 March</p>
         </p>
         <p className="text-white text-[1rem]">
-          Republic of Korea Army, 22nd Division, HQ Command, Military Band, Korea
-          Sergeant, Percussion 
-          2020 September - 2022 March
+          <p>Film Studio 3355 & JG Pictures, Seoul, Korea</p>
+          <p>August 2017 - January2019 </p>
+          <p>Role: Prop Maker and Buyer, Set Dresser, Film Crew</p>
+          <p>Description: Created various woodwork props for the film Romang. Purchased and rented props from shops and storages. Assisted in set design and shooting as crew member.</p>
+        </p>
+        <p className="text-white text-[1rem] mt-5">
+          <p className="text-xl font-extrabold">Exhibitions</p>
         </p>
         <p className="text-white text-[1rem]">
-          Film Studio 3355 & JG Pictures, Seoul, Korea
-          August 2017 - January2019 
-          Role: Prop Maker and Buyer, Set Dresser, Film Crew
-          Description: Created various woodwork props for the film Romang. Purchased and rented props from shops and storages. Assisted in set design and shooting as crew member.
+          <p><div className={`${kanit_it.className}`}>Day and Night,</div> Rehall Art Gallery, Seoul, Korea</p>
+          <p>August 2021</p>
+          <p>Group exhibition of artists chosen by talent platform Leffica </p>
         </p>
         <p className="text-white text-[1rem]">
-          <div className={`${kanit_it.className}`}>Day and Night,</div> Rehall Art Gallery, Seoul, Korea
-          August 2021
-          Group exhibition of artists chosen by talent platform Leffica 
+          <p><div className={`${kanit_it.className}`}>Threshold: Road to Utopia,</div> Chicago Korean Culture Center, Illinois, Chicago</p>
+          <p> August 2022 - May 2023</p>
+            <p>Founding member of SAIC Korean Student Association’s Exhibition Branch. Organized and curated event. Participated as an artist.</p>
         </p>
         <p className="text-white text-[1rem]">
-        <div className={`${kanit_it.className}`}>Threshold: Road to Utopia,</div> Chicago Korean Culture Center, Illinois, Chicago
-          August 2022 - May 2023
-          Founding member of SAIC Korean Student Association’s Exhibition Branch. Organized and curated event. Participated as an artist.
+        <p><div className={`${kanit_it.className}`}>Extinction and Creation,</div> Chicago Korean Culture Center, Illinois, Chicago</p>
+          <p>September 2023 - December 2023</p>
+          <p>Curated event as part of SAIC Korean Student Association’s Exhibition Branch. </p>
+        </p>
+        <p className="text-white text-[1rem]">
+          <p><div className={`${kanit_it.className}`}>Veil: Between People,</div> Blue Cube Gallery, Seoul, Korea</p>
+          <p>September 2024</p>
+          <p>Solo Exhibition</p>
+        </p>
+        <p className="text-white text-[1rem]">
+          <p><div className={`${kanit_it.className}`}>Beyond Border,</div> Group Art Show, Cosmos Gallery, New York, New York</p>
+          <p>September 2024 - October 2024</p>
+          <p>Group exhibition of artists chosen by Cosmos Gallery  </p>
+        </p>
+        <p className="text-white text-[1rem]">
+          <p><div className={`${kanit_it.className}`}>Relationship, Veil, and Connections,</div> Vibe Art Space, Seoul, Korea</p>
+          <p>November 2024</p>
+          <p>Solo exhibition</p>
+        </p>
+        <p className="text-white text-[1rem]">
+          <p><div className={`${kanit_it.className}`}>Undergraduate BFA Exhibition,</div> SAIC Gallery, Illinois, Chicago</p>
+          <p>November 2024</p>
+          <p>Presented Capstone group project Falling Tide. Participated as curator and artist. </p>
+        </p>
+        <p className="text-white text-[1rem]">
+          <p>International Group Art Show, CICA Gallery, Suwon, Korea</p>
+          <p>March 2025 (expected)</p>
+          <p>Group exhibition of international artists chosen by CICA gallery</p>
         </p>
       </div>
     </div>
