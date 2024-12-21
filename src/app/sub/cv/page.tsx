@@ -8,7 +8,7 @@ export default function CvPage() {
     <div
       className={`flex w-full justify-center items-center ${kanit.className}`}
     >
-      <div className="gap-5 flex flex-col w-full max-w-[550px]">
+      <div className="gap-5 flex flex-col w-full max-w-[550px] p-5">
         <p className="text-white text-[1rem]">
           <p className="text-xl font-extrabold">Education.</p>
         </p>

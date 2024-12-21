@@ -7,7 +7,7 @@ export default function StatementPage() {
     <div
       className={`flex w-full justify-center items-center ${kanit.className}`}
     >
-      <div className="gap-5 flex flex-col w-full max-w-[500px]">
+      <div className="gap-5 flex flex-col w-full max-w-[500px] p-5">
         <p className="text-white text-[1rem]">
           The color black is at the core of my creative practice. It encapsulates my own existence, the way it absorbs everything, leaving no trace as to what went into its making. It stands, between myself and the “other,” as a veil that makes it impossible to see beyond. My wish is to breach this veil, no matter how impenetrable it may seem, to connect with the “other.” Thus, my study revolves around the color black—my own existential crisis—and surmounting the limitations imposed by it.
         </p>
