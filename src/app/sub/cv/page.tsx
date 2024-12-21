@@ -8,10 +8,11 @@ export default function CvPage() {
     <div
       className={`flex w-full justify-center items-center ${kanit.className}`}
     >
-      <div className="gap-5 flex flex-col w-full max-w-[500px] mt-5">
-        <p className="font-semibold text-white text-[1.5rem]">My Show</p>
+      <div className="gap-5 flex flex-col w-full max-w-[600px]">
         <p className="text-white text-[1rem]">
-          <b className="text-xl">Education</b>
+          <p className="text-xl font-bold">Education</p>
+        </p>
+        <p className="text-white text-[1rem]">
           University of Wisconsin-Milwaukee, Milwaukee, Wisconsin
           September 2017 - May 2019 
           Film Major
@@ -21,7 +22,7 @@ export default function CvPage() {
           B.F.A.
         </p>
         <p className="text-white text-[1rem]">
-          <b className="text-xl">Work Experience</b>
+          <p className="text-xl font-bold">Work Experience</p>
         </p>
         <p className="text-white text-[1rem]">
           Republic of Korea Army, 22nd Division, HQ Command, Military Band, Korea
@@ -35,12 +36,12 @@ export default function CvPage() {
           Description: Created various woodwork props for the film Romang. Purchased and rented props from shops and storages. Assisted in set design and shooting as crew member.
         </p>
         <p className="text-white text-[1rem]">
-          <p className={`${kanit_it.className}`}>Day and Night,</p> Rehall Art Gallery, Seoul, Korea
+          <div className={`${kanit_it.className}`}>Day and Night,</div> Rehall Art Gallery, Seoul, Korea
           August 2021
           Group exhibition of artists chosen by talent platform Leffica 
         </p>
         <p className="text-white text-[1rem]">
-        <p className={`${kanit_it.className}`}>Threshold: Road to Utopia,</p> Chicago Korean Culture Center, Illinois, Chicago
+        <div className={`${kanit_it.className}`}>Threshold: Road to Utopia,</div> Chicago Korean Culture Center, Illinois, Chicago
           August 2022 - May 2023
           Founding member of SAIC Korean Student Association’s Exhibition Branch. Organized and curated event. Participated as an artist.
         </p>

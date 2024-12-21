@@ -74,7 +74,7 @@ export default async function Sub() {
               className="flex items-baseline mt-10 text-gray-600 hover:text-gray-900 focus:text-gray-900"
               href=""
             >
-              <Link href="/sub/arts" className="text-xl md:text-[2rem] tracking-wide">
+              <Link href="/sub/arts" className="text-lg md:text-[2rem] tracking-wide">
                 <span>
                   <b>My Art Works</b>
                 </span>
