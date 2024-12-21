@@ -75,7 +75,7 @@ export default function CvPage() {
           <p>Presented Capstone group project Falling Tide. Participated as curator and artist. </p>
         </p>
         <p className="text-white text-[1rem]">
-          <p>International Group Art Show, CICA Gallery, Suwon, Korea</p>
+          <p><span className={`${kanit_it.className}`}>International Group Art Show</span>, CICA Gallery, Suwon, Korea</p>
           <p>March 2025 (expected)</p>
           <p>Group exhibition of international artists chosen by CICA gallery</p>
         </p>
